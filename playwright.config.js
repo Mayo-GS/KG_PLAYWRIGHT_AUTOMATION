@@ -1,4 +1,5 @@
 // @ts-check
+require('dotenv').config();
 const { defineConfig, devices } = require('@playwright/test');
 
 /**
@@ -37,9 +38,12 @@ module.exports = defineConfig({
     browserName : 'chromium',
     baseURL: 'https://koshergraphics.com', 
     extraHTTPHeaders: {
-      'Authorization': 'rqbDGhAQmcrNTtmiFanlj5q3H2Tdc7qj',
-      'customheader': 'https://PWe2ekoshergraphics.com',
-      'Accept-Language': 'en-US,en;q=0.9',
+      // @ts-ignore
+      "authorization": process.env.AUTHORIZATION_HEADER,
+      // @ts-ignore
+      "customheader": process.env.CUSTOM_HEADER,
+      // @ts-ignore
+      "Accept-Language": process.env.ACCEPT_LANGUAGE,
     },
   },
 

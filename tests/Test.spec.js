@@ -4,8 +4,8 @@ const {LoginPage} = require('../pageObjects/LoginPage');
 
 
 test('Successful Login to KG site', async ({page, baseURL})=>{
-    const email = "mayokuntest@gmail.com";
-    const password = "kgtest1234";
+    const email = process.env.EMAIL;
+    const password = process.env.PASSWORD;
     const homePage = new HomePage(page, baseURL);
     const loginPage = new LoginPage(page);
     

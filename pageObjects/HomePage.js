@@ -6,7 +6,7 @@ constructor(page, baseURL){
     this.baseURL = baseURL
     this.header = page.locator("div.home-slider-block h2")
     this.homeLoginButton = page.locator("button.sm span:nth-child(1)");
-    this.profileIcon = page.locator("button.usermenu");
+    this.profileIcon = page.locator("div.usermenuinner button.usermenu");
 
     };
 
